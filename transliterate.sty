@@ -1,0 +1,20 @@
+% transliterate.sty
+\ProvidesPackage{transliterate}
+
+\RequirePackage{pythontex}
+
+% Define the transliterate+ command using pythontex
+\newcommand{\transliterate}[1]{%
+	\py{transliterate('#1')}
+}
+
+\begin{pycode}
+from indic_transliteration.sanscript import transliterate as sanscript_transliterate
+from indic_transliteration.detect import detect 
+from indic_transliteration import sanscript
+def transliterate(text):
+ _from = detect(text)
+ _to = sanscript.ISO
+ translated_text = sanscript_transliterate(text, _from, _to)
+ return translated_text
+\end{pycode}

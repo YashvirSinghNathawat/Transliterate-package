@@ -1,0 +1,36 @@
+=>PYTHONTEX#py#default#default#0#code#####11#
+from indic_transliteration.sanscript import transliterate as sanscript_transliterate
+from indic_transliteration.detect import detect
+from indic_transliteration import sanscript
+def transliterate(text):
+ _from = detect(text)
+ _to = sanscript.ISO
+ translated_text = sanscript_transliterate(text, _from, _to)
+ return translated_text
+=>PYTHONTEX#py#default#default#1#i#####7#
+transliterate('मैंने उसे अपने दोस्तों के साथ बात करते हुए देखा।')
+=>PYTHONTEX:SETTINGS#
+version=0.18
+outputdir=pythontex-files-main
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python3|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python3|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python3|
+pygfamily=pylabcon|pycon|
